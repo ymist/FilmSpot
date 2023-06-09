@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/homepage.css" />
+		<link rel="stylesheet" href="/css/topbar.css" />
+		<link rel="stylesheet" href="/css/areafilms.css"" />
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<title>FilmSpot</title>
+	</head>
+	<body>
+		<header class="topbar">
+			<nav>
+				<ul>
+					<li>
+						<a href="/main.html"><i class="bx bx-movie"></i> FilmSpot</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!--? Container de saída da barra de pesquisa. -->
+		<div class="container">
+			<div class="searchContainer">
+				<!--? Input da barra de pesquisa. -->
+				<input type="text" placeholder="Insira um Filme..." id="search-input" />
+				<!--? Botão para confirmar a pesquisa. -->
+				<button id="search-btn">Buscar</button>
+				<div id="auto-complete-results">
+					<!--? Aqui será onde terá a lista com os flimes ou séries na barra de pesquisa. -->
+				</div>
+			</div>
+			<div id="result">
+				<!--? Aqui é onde será preenchido o Container com os dados da API -->
+				<h2 class="hometitle">FilmSpot</h2>
+				<h2 class="description">
+					FilmSpot é um buscador de filmes, séries e shows de TVs com dados da API
+					<a href="http://www.omdbapi.com/" target="_blank">OMDB.API</a>, buscando notas de sites de crítica,
+					poster, elenco, diretor, escritor e até premiações.
+					<p>Obrigado pela visita, aproveite o site!!!</p>
+				</h2>
+				<div class="divFilter">
+					<div class="filterStyle">
+						<h2>Filtrar</h2>
+						<select id="genre-select">
+							<option value="Filtrar" class="opFilter">Filtrar</option>
+						</select>
+					</div>
+				</div>
+				<div class="bodyFilm" id="bodyFilm"></div>
+				<div class="pagination">
+					<button id="prev-page-btn">Página Anterior</button>
+					<button id="next-page-btn">Próxima Página</button>
+				</div>
+			</div>
+		</div>
+		<script src="requestAPI.js"></script>
+		<script src="homepage.js"></script>
+	</body>
+</html>
