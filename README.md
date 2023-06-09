@@ -1,3 +1,5 @@
-Esse projeto foi utlizada a API de filmes e séries OMDB.API, foi feito utilizando algumas inspirações como base, mas moldei para meu gosto e adcionei algumas funções importantes, como um autocomplete na barra de pesquisa.
+O Projeto FilmSpot é meu primeiro projeto pessoal, onde ele busca filmes, séries, animes e também busca notas, posteres e pode também filtrar por genêros.
 
-Meu primeiro projeto "Grande", que pretendo adcionar mais funcionalidades e melhora-lo, utilizei apenas Javascript Puro e HTML e CSS.
+Tudo isso utlizei as OMDB.API e TMDB.API, devido que elas tem funções específicas e são gratuitas, agradeço pela visita e fique a vontade para testar o site.
+
+OBRIGADO!!! 😁😁
