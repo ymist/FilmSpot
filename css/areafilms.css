@@ -31,10 +31,9 @@
 	max-height: 2em;
 	overflow-y: auto;
 }
-.bodyFilm {
+.listaPorGenero {
 	display: flex;
 	flex-wrap: wrap;
-
 	justify-content: space-around;
 	-webkit-text-stroke: 1px black;
 }
