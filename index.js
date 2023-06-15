@@ -92,21 +92,18 @@ var getMovie = () => {
 						data.Poster === "N/A"
 							? `<img src="/imagens/image_not_found.png" class="poster">`
 							: `<img src =${data.Poster} class="poster">`;
-
 					let notaRottenTomatoes = "";
 					if (data.Ratings.length > 0) {
 						if (data.Ratings[1].Value >= "60") {
 							const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 							notaRottenTomatoes = `
-							<img src="/imagens/tomato-svgrepo-com.svg">
-							<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>
-									  `;
+											<img src="/imagens/tomato-svgrepo-com.svg">
+											<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 						} else {
 							const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 							notaRottenTomatoes = `
-						<img src="/imagens/paint-mark-1-svgrepo-com.svg">
-						<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>
-						`;
+											<img src="/imagens/paint-mark-1-svgrepo-com.svg">
+											<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 						}
 					}
 					let premiosOmdb = data.Awards === "N/A" ? "" : `<h3>Awards</h3> <p>${data.Awards}</p>`;
@@ -115,8 +112,8 @@ var getMovie = () => {
 							? ""
 							: ` <img src="/imagens/star-icon.svg"> <h4 title="Rating IMDB.">${data.imdbRating}</h4>`;
 					resultadoDasFuncoes.innerHTML = `
-                    <div class="info">
-						${posterOmdb}
+                    	<div class="info">
+							${posterOmdb}
 						<div>
 							<h2>${data.Title}</h2>
 							<div class="rating">
@@ -258,14 +255,12 @@ document.addEventListener("DOMContentLoaded", function () {
 											const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 											notaRottenTomatoes = `
 												<img src="/imagens/tomato-svgrepo-com.svg">
-												<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>
-									  `;
+												<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 										} else {
 											const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 											notaRottenTomatoes = `
 													<img src="/imagens/paint-mark-1-svgrepo-com.svg">
-													<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>
-						`;
+													<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 										}
 									}
 									let notaImdb =
