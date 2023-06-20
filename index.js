@@ -22,7 +22,7 @@ function resultadoAutoComplete(results) {
 		// Condição para se houver ou não uma Imagem para os itens.
 		const img = document.createElement("img");
 		if (result.Poster == "N/A") {
-			img.src = "/imagens/image_not_found.png";
+			img.src = "./imagens/image_not_found.png";
 		} else {
 			img.src = result.Poster;
 		}
@@ -90,19 +90,19 @@ var getMovie = () => {
 							: `<span>${data.totalSeasons} Temporadas</span>`;
 					let posterOmdb =
 						data.Poster === "N/A"
-							? `<img src="/imagens/image_not_found.png" class="poster">`
+							? `<img src="./imagens/image_not_found.png" class="poster">`
 							: `<img src =${data.Poster} class="poster">`;
 					let notaRottenTomatoes = "";
 					if (data.Ratings.length > 0) {
 						if (data.Ratings[1].Value >= "60") {
 							const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 							notaRottenTomatoes = `
-											<img src="/imagens/tomato-svgrepo-com.svg">
+											<img src="./imagens/tomato-svgrepo-com.svg">
 											<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 						} else {
 							const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 							notaRottenTomatoes = `
-											<img src="/imagens/paint-mark-1-svgrepo-com.svg">
+											<img src="./imagens/paint-mark-1-svgrepo-com.svg">
 											<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 						}
 					}
@@ -110,7 +110,7 @@ var getMovie = () => {
 					let notaImdb =
 						data.imdbRating === "N/A"
 							? ""
-							: ` <img src="/imagens/star-icon.svg"> <h4 title="Rating IMDB.">${data.imdbRating}</h4>`;
+							: ` <img src="./imagens/star-icon.svg"> <h4 title="Rating IMDB.">${data.imdbRating}</h4>`;
 					resultadoDasFuncoes.innerHTML = `
                     	<div class="info">
 							${posterOmdb}
@@ -254,19 +254,19 @@ document.addEventListener("DOMContentLoaded", function () {
 										if (data.Ratings[1].Value >= "60") {
 											const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 											notaRottenTomatoes = `
-												<img src="/imagens/tomato-svgrepo-com.svg">
+												<img src="./imagens/tomato-svgrepo-com.svg">
 												<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 										} else {
 											const limparNotaRotten = data.Ratings[1].Value.replace("/100", "%");
 											notaRottenTomatoes = `
-													<img src="/imagens/paint-mark-1-svgrepo-com.svg">
+													<img src="./imagens/paint-mark-1-svgrepo-com.svg">
 													<h4 title="Rotten Tomatoes.">${limparNotaRotten}</h4>`;
 										}
 									}
 									let notaImdb =
 										data.imdbRating === "N/A"
 											? ""
-											: ` <img src="/imagens/star-icon.svg"> <h4 title="Rating IMDB.">${data.imdbRating}</h4>`;
+											: ` <img src="./imagens/star-icon.svg"> <h4 title="Rating IMDB.">${data.imdbRating}</h4>`;
 									notasItem.innerHTML = `${notaImdb} ${notaRottenTomatoes}`;
 								}
 							});
