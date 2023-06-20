@@ -1,7 +1,8 @@
 # FilmSpot
 
-        FilmSpot é um site para buscar filmes, séries, shows de TV e descobrir suas informações como notas(IMDB e Rotten Tomatoes), Atores, Diretores, Escritores entre outras coisas.
-        Feito totalmente usando apenas JavaScript, HTML e CSS e utilizando as APIs de filmes e séries OMDB.API e TMDB.API.
+FilmSpot é um site para buscar filmes, séries, shows de TV e descobrir suas informações como notas(IMDB e Rotten Tomatoes), Atores, Diretores, Escritores entre outras coisas.
+
+Feito totalmente usando apenas JavaScript, HTML e CSS e utilizando as APIs de filmes e séries OMDB.API e TMDB.API.
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -17,9 +18,9 @@
     O projeto tem ainda apenas duas funções principais:
 
 -   ### Buscar Itens por nome em **INGLÊS**.
-            Escreva o nome de algum filme, série ou shows de TV na barra de pesquisa, que tem um autocomplete e oferece opções semelhantes ao que foi escrito e após selecionar um item é retornado uma página com todas as informações do filme.
+    Escreva o nome de algum filme, série ou shows de TV na barra de pesquisa, que tem um autocomplete e oferece opções semelhantes ao que foi escrito e após selecionar um item é retornado uma página com todas as informações do filme.
 -   ### Buscar filmes por **GENÊRO**.
-            Logo abaixo a barra de pesquisa temos uma opção de filtro que por agora tem apenas por genêros de filmes, após selecionar uma opção retornará 20 filmes do genêro escolhido e será possivel avançar de página até acabar o número de filmes desse genêro e se decidir clicar em algum dos filmes, será executado a função acima, retornando as informações do filme escolhido.
+    Logo abaixo a barra de pesquisa temos uma opção de filtro que por agora tem apenas por genêros de filmes, após selecionar uma opção retornará 20 filmes do genêro escolhido e será possivel avançar de página até acabar o número de filmes desse genêro e se decidir clicar em algum dos filmes, será executado a função acima, retornando as informações do filme escolhido.
 
 ## Desafios
 
