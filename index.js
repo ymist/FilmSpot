@@ -5,7 +5,7 @@ const autocompleteResults = document.getElementById("auto-complete-results"); //
 
 //Função que realiza a busca na API do OMDB para fazer a lista de itens para o autocomplete.
 async function buscarItens(termoDeBusca) {
-	const response = await fetch(`http://www.omdbapi.com/?apikey=${keyOmdbApi}&s=${termoDeBusca.toLowerCase()}`);
+	const response = await fetch(`https://www.omdbapi.com/?apikey=${keyOmdbApi}&s=${termoDeBusca.toLowerCase()}`);
 	const data = await response.json();
 	return data.Search;
 }
@@ -68,7 +68,7 @@ const botaoBarraDePesquisa = document.getElementById("search-btn");
 e retorna com os dados do item, poster, faixa etária, genêros, plot, cast, director e etc...*/
 var getMovie = () => {
 	var movieName = movienamehtml.value;
-	const url = `http://www.omdbapi.com/?t=${movieName}&plot=full&apikey=${keyOmdbApi}`;
+	const url = `https://www.omdbapi.com/?t=${movieName}&plot=full&apikey=${keyOmdbApi}`;
 
 	// Caso a barra de pesquisa não seja preenchida.
 
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						// Realiza uma busca na API do OMDB apenas para ter a nota do rotten tomatoes e imdb.
 						var notasItem = document.createElement("div");
 						notasItem.className = "notahome";
-						var omdbUrl = `http://www.omdbapi.com/?t=${movie.title}&plot=full&apikey=${keyOmdbApi}`;
+						var omdbUrl = `https://www.omdbapi.com/?t=${movie.title}&plot=full&apikey=${keyOmdbApi}`;
 						fetch(omdbUrl)
 							.then((resp) => resp.json())
 							.then((data) => {
