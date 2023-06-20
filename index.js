@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Função que realiza a busca na API do TMDB para obter os gêneros disponíveis.
 	function procurarGeneros() {
 		fetch(
-			`https://api.themoviedb.org/3/genre/movie/list?api_key=${keyApiTMDB}&language=${language}&page=${paginaAtual}&per_page=20`
+			`https://api.themoviedb.org/3/genre/movie/list?api_key=${keyApiTMDB}&language=${language}&page=${paginaAtual}&per_page=20`,
 		)
 			.then(function (response) {
 				return response.json();
