@@ -9,7 +9,7 @@ Feito totalmente usando apenas JavaScript, HTML e CSS e utilizando as APIs de fi
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ## IMPORTANTE
 
-AINDA NÃO ESTÁ RESPONSIVO PARA CELULARES, TABLETS OU TVS.
+👉AINDA NÃO ESTÁ RESPONSIVO PARA CELULARES, TABLETS OU TVS.👈
 
 ## Referências
 
