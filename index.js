@@ -50,7 +50,7 @@ searchInput.addEventListener("input", async () => {
 	timeoutId = setTimeout(async () => {
 		const results = await buscarItens(termoDeBusca);
 		resultadoAutoComplete(results);
-	}, 100);
+	}, 250);
 });
 
 // Evento que esconde a barra de autocomplete quando á um "click" fora dela.
