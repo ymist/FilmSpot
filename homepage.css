@@ -445,7 +445,7 @@ h2 {
 }
 @media (min-width: 415px) and (max-width: 767px) {
 	.container {
-		width: 50vh;
+		width: 46vh;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
@@ -589,7 +589,7 @@ h2 {
 }
 @media (max-width: 320px) {
 	.container {
-		width: 47vh;
+		width: 46vh;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
@@ -736,7 +736,7 @@ h2 {
 }
 @media (min-width: 321px) and (max-width: 414px) {
 	.container {
-		width: 47vh;
+		width: 46vh;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
