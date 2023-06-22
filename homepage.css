@@ -742,7 +742,7 @@ h2 {
 }
 @media (min-width: 321px) and (max-width: 414px) {
 	.container {
-		width: 46vh;
+		width: 44vh;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
@@ -752,7 +752,7 @@ h2 {
 		justify-content: center;
 	}
 	.container input {
-		width: 24em;
+		width: 22em;
 		font-size: 12px;
 	}
 	#search-btn {
@@ -766,7 +766,7 @@ h2 {
 	}
 	#auto-complete-results {
 		font-size: 12px;
-		width: 24em;
+		width: 22em;
 	}
 	#auto-complete-results li {
 		font-size: 10px;
