@@ -445,7 +445,7 @@ h2 {
 }
 @media (min-width: 415px) and (max-width: 767px) {
 	.container {
-		width: 40vh;
+		width: 50vh;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
