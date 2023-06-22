@@ -491,6 +491,9 @@ h2 {
 		width: 8em;
 		font-size: 12px;
 	}
+	.listaPorGenero{
+		-webkit-text-stroke: 0.5px black;
+	}
 	.areaFilm {
 		width: 6.5;
 		height: 9em;
@@ -633,6 +636,9 @@ h2 {
 	#genre-select {
 		width: 8em;
 		font-size: 12px;
+	}
+	.listaPorGenero{
+		-webkit-text-stroke: 0.5px black;
 	}
 	.areaFilm {
 		width: 5.5em;
@@ -781,6 +787,9 @@ h2 {
 	#genre-select {
 		width: 8em;
 		font-size: 12px;
+	}
+	.listaPorGenero{
+		-webkit-text-stroke: 0.5px black;
 	}
 	.areaFilm {
 		width: 5.5em;
