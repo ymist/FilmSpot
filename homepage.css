@@ -28,17 +28,16 @@ body {
 	min-height: 150px;
 }
 .searchContainer {
-	display: grid;
-	grid-template-columns: 9fr 3fr;
-	gap: 1.2em;
+	display: flex;
+	justify-content: center;
 }
-.searchContainer input,
-button {
+.searchContainer input {
 	font-size: 0.9em;
 	outline: none;
 	border-radius: 0.3em;
 	border: none;
 	padding-top: 0.1em;
+	width: 48em;
 }
 .searchContainer input {
 	padding-left: 0.5em;
@@ -47,14 +46,6 @@ button {
 }
 .searchContainer input:focus {
 	border-color: #fff;
-}
-.searchContainer button {
-	justify-content: center;
-	background-color: #ffb92a;
-	font-size: 0.9em;
-	border: none;
-	cursor: pointer;
-	padding: 0 0.5em 0 0.5em;
 }
 #result {
 	color: #fff;
@@ -80,7 +71,10 @@ p {
 	margin-top: 1.2em;
 }
 .poster {
-	width: 80%;
+	width: 275px;
+	height: 400px;
+	border: solid 5px #a0a0a0;
+	border-radius: 5px;
 }
 h2 {
 	text-align: center;
@@ -140,7 +134,7 @@ h2 {
 	border-radius: 0em 0em 0.3em 0.3em;
 	max-height: 300px;
 	overflow-y: auto;
-	width: 68.3%;
+	width: 48em;
 	margin-top: 23px;
 	z-index: 3;
 }
@@ -276,12 +270,14 @@ h2 {
 	padding: 10px;
 	border-radius: 10px;
 	cursor: pointer;
+	border: none;
 }
 .topbar {
 	background-color: #1e293b;
 	color: #fff;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 2.5em;
 	font-size: 20px;
 }
@@ -296,6 +292,10 @@ h2 {
 	margin: 0;
 	padding: 0;
 }
+.topbar img {
+	width: 23px;
+	height: 23px;
+}
 .topbar a {
 	color: #fff;
 	text-decoration: none;
@@ -303,10 +303,16 @@ h2 {
 .topbar a:hover {
 	color: #ffb92a;
 }
+.loading {
+	display: block;
+	align-self: center;
+	width: 60px;
+	height: 60px;
+}
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1080px) {
 	.container {
-		width: 90vh;
+		width: 35em;
 		font-size: 20px;
 		margin-top: 1em;
 		padding: 1em;
@@ -372,8 +378,8 @@ h2 {
 		margin-top: 3vh;
 	}
 	.poster {
-		width: 7em;
-		height: 10em;
+		width: 10em;
+		height: 14em;
 		border: solid 2px #a0a0a0;
 		border-radius: 5px;
 	}
@@ -491,7 +497,7 @@ h2 {
 		width: 8em;
 		font-size: 12px;
 	}
-	.listaPorGenero{
+	.listaPorGenero {
 		-webkit-text-stroke: 0.5px black;
 	}
 	.areaFilm {
@@ -637,7 +643,7 @@ h2 {
 		width: 8em;
 		font-size: 12px;
 	}
-	.listaPorGenero{
+	.listaPorGenero {
 		-webkit-text-stroke: 0.5px black;
 	}
 	.areaFilm {
@@ -788,7 +794,7 @@ h2 {
 		width: 8em;
 		font-size: 12px;
 	}
-	.listaPorGenero{
+	.listaPorGenero {
 		-webkit-text-stroke: 0.5px black;
 	}
 	.areaFilm {

@@ -62,7 +62,6 @@ document.addEventListener("click", (event) => {
 
 var movienamehtml = document.getElementById("search-input");
 const resultadoDasFuncoes = document.getElementById("result");
-const botaoBarraDePesquisa = document.getElementById("search-btn");
 
 /* Função que faz a busca na API do OMDB com o Input inserido na barra 
 e retorna com os dados do item, poster, faixa etária, genêros, plot, cast, director e etc...*/
@@ -82,6 +81,7 @@ var getMovie = () => {
 			.then((resp) => resp.json())
 			.then((data) => {
 				if (data.Response == "True") {
+					history.pushState({ movieName }, "", `?item=${encodeURIComponent(movieName)}`);
 					let escritorOmdb = data.Writer === "N/A" ? "" : `<h3>Writer</h3> <p>${data.Writer}</p>`;
 					let diretorOmdb = data.Director === "N/A" ? "" : `<h3>Director</h3> <p>${data.Director}</p>`;
 					let tipoItemOmdb =
@@ -150,11 +150,6 @@ var getMovie = () => {
 			});
 	}
 };
-// Cria um evento "click" no botão da barra de pesquisa.
-botaoBarraDePesquisa.addEventListener("click", getMovie);
-window.addEventListener("load", () => {
-	searchInput.value = "";
-});
 // Cria um evento "click" na tecla enter no input da barra de pesquisa.
 searchInput.addEventListener("keypress", function (event) {
 	if (event.key === "Enter") {
@@ -172,9 +167,9 @@ const language = "en";
 var listaPorGenero = document.getElementById("listaPorGenero");
 // Define a página atual da API TMDB.
 let paginaAtual = 1;
-
+let maxPages;
 // Evento para que carregue a função antes do CSS.
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
 	var selecionarGenero = document.getElementById("genre-select");
 
 	// Função que realiza a busca na API do TMDB para obter os gêneros disponíveis.
@@ -217,16 +212,21 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 			.then(function (data) {
 				var itensTmdb = data.results;
+				maxPages = data.total_pages;
 				listaPorGenero.innerHTML = "";
 				// Caso o número de itens for maior que zero, retornará 20 itens por página, com nome, poster e notas do imdb e rotten tomatoes.
 				if (itensTmdb.length > 0) {
 					itensTmdb.forEach(function listaDeItensTmdb(movie) {
 						let posterTMDB = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
-
 						var cardItens = document.createElement("div");
 						cardItens.className = "areaFilm";
 						cardItens.style.background = `linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("${posterTMDB}")`;
 						cardItens.style.backgroundSize = `100%`;
+
+						let loadingElement = document.createElement("img");
+						loadingElement.src = "./imagens/Rolling-1s-200px(1).svg";
+						loadingElement.className = "loading";
+						cardItens.appendChild(loadingElement);
 						// Evento de "click" no card do item, carregue a função getMovie() e com um scroll smooth até o topo.
 						cardItens.addEventListener("click", function () {
 							var nomeItem = tituloItem.textContent;
@@ -270,6 +270,8 @@ document.addEventListener("DOMContentLoaded", function () {
 									notasItem.innerHTML = `${notaImdb} ${notaRottenTomatoes}`;
 								}
 							});
+
+						loadingElement.style.display = "none";
 						informacoesItem.appendChild(tituloItem);
 						informacoesItem.appendChild(notasItem);
 
@@ -289,21 +291,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Configurações iniciais dos botões de Proxima Pagina e Anterior.
 	let paginaSeguinte = document.getElementById("next-page-btn");
 	let paginaAnterior = document.getElementById("prev-page-btn");
-	paginaAnterior.disabled = true;
-	paginaAnterior.style.cursor = "default";
-	paginaSeguinte.disabled = true;
-	paginaSeguinte.style.cursor = "default";
+
+	paginaAnterior.style.display = "none";
+	paginaSeguinte.style.display = "none";
+
 	//Evento de "change" para quando o filtro seja mudado, atualizará os resultados e a pagina volte a 1.
 	selecionarGenero.addEventListener("change", function () {
 		let generoSelecionado = selecionarGenero.value;
-		if (generoSelecionado === "Filtrar") {
-			listaPorGenero.innerHTML = "";
-			paginaAnterior.disabled = true;
-			paginaAnterior.style.cursor = "default";
-			paginaSeguinte.disabled = true;
-			paginaSeguinte.style.cursor = "default";
-		} else {
+		if (generoSelecionado !== "Filtrar") {
 			paginaAtual = 1;
+			paginaAnterior.style.display = "block";
+			paginaSeguinte.style.display = "block";
 			var scrollMove = { top: 420, behavior: "smooth" };
 			window.scrollTo(scrollMove);
 			buscarItensPorGeneros(generoSelecionado);
@@ -324,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				paginaAnterior.disabled = true;
 				paginaAnterior.style.cursor = "default";
 			}
-			paginaSeguinte.disabled = false;
 		}
 	});
 	//Evento de "click" para avançar uma página.
@@ -338,23 +335,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			paginaAnterior.style.cursor = "pointer";
 			if (paginaAtual === maxPages) {
 				paginaSeguinte.disabled = true;
+				paginaSeguinte.style.cursor = "default";
 			}
-		}
-	});
-	//Configurações dos botões ao iniciar a página.
-	document.addEventListener("DOMContentLoaded", function () {
-		if (selecionarGenero.value === "Filtrar") {
-			paginaAnterior.disabled = true;
-			paginaSeguinte.disabled = true;
-			paginaAnterior.style.color = "gray";
-			paginaSeguinte.style.color = "gray";
-		} else {
-			paginaAnterior.disabled = false;
-			paginaSeguinte.disabled = false;
-			paginaAnteriorior.style.color = "";
-			paginaSeguinte.style.color = "";
-			paginaAnterior.style.cursor = "pointer";
-			paginaSeguinte.style.cursor = "pointer";
 		}
 	});
 });
